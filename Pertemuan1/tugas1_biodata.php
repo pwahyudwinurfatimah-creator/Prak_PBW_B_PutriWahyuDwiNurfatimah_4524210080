@@ -1,5 +1,4 @@
 <?php
-// biodata.php
 
 function statusKelulusan(float $ipk): string
 {
@@ -14,9 +13,6 @@ function statusKelulusan(float $ipk): string
     return 'Perlu Peningkatan';
 }
 
-
-// MODIFIKASI:
-// Menambahkan fungsi kategori IPK
 function kategoriIPK(float $ipk): string
 {
     if ($ipk >= 3.50) {
@@ -30,21 +26,25 @@ function kategoriIPK(float $ipk): string
     return 'IPK Cukup';
 }
 
-
-// DATA MAHASISWA
-
 $mahasiswa = [
-    'nim' => '2026001',
-    'nama' => 'Andi Pratama',
+    'nim' => '2026015',
+    'nama' => 'Rizky Maulana',
     'prodi' => 'Teknik Informatika',
-    'semester' => 1,
-    'ipk' => 3.72,
+    'semester' => 2,
+    'tahun_masuk' => 2025,
 
-    // MODIFIKASI
-    'tanggal_lahir' => '15 Mei 2005',
+    'tanggal_lahir' => '12 Agustus 2005',
+    'jenis_kelamin' => 'Laki-laki',
+    'agama' => 'Islam',
 
-    // MODIFIKASI
-    'jenis_kelamin' => 'Laki-laki'
+    'alamat' => 'Jl. Melati No. 15, Jakarta',
+    'email' => 'rizky.maulana@email.com',
+    'no_hp' => '081234567890',
+
+    'hobi' => 'Membaca dan bermain futsal',
+    'status' => 'Mahasiswa Aktif',
+
+    'ipk' => 3.45
 ];
 
 ?>
@@ -56,163 +56,142 @@ $mahasiswa = [
 
     <meta charset="UTF-8">
 
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
     <title>Biodata Mahasiswa</title>
 
     <style>
 
-        * {
-            box-sizing: border-box;
-        }
-
         body {
             margin: 0;
-
+            padding: 30px;
             font-family: Arial, sans-serif;
-
-            background: #eef2f7;
-
-            padding: 40px;
+            background-color: #fff;
+            color: #fff;
         }
 
         .container {
-            width: 600px;
-
+            width: 700px;
             max-width: 95%;
-
-            margin: auto;
-
-            background: white;
-
-            border-radius: 15px;
-
-            box-shadow:
-                0 5px 20px
-                rgba(0, 0, 0, 0.12);
-
-            overflow: hidden;
+            margin: 20px auto;
+            background-color: white;
+            border: 1px solid #ccc;
         }
 
         .header {
-            background: #4a6cf7;
-
-            color: white;
-
-            text-align: center;
-
-            padding: 25px;
+            padding: 20px;
+            background-color: #444da1;
+            border-bottom: 1px solid #ccc;
         }
 
         .header h1 {
-            margin: 0 0 8px;
-
-            font-size: 27px;
+            margin: 0;
+            font-size: 24px;
         }
 
         .header p {
-            margin: 0;
-
+            margin: 6px 0 0;
+            color: #fff;
             font-size: 14px;
-
-            opacity: 0.9;
         }
 
         .content {
             padding: 25px;
         }
 
+        h3 {
+            margin: 0 0 15px;
+            font-size: 18px;
+            color: #444;
+        }
+
         .data {
             width: 100%;
-
             border-collapse: collapse;
         }
 
-        .data tr {
-            border-bottom: 1px solid #eee;
-        }
-
-        .data tr:last-child {
-            border-bottom: none;
-        }
-
         .data td {
-            padding: 14px 10px;
+            padding: 11px 8px;
+            border-bottom: 1px solid #e5e5e5;
+            font-size: 14px;
         }
 
         .data td:first-child {
-            width: 40%;
-
+            width: 35%;
             font-weight: bold;
-
-            color: #555;
+            color: #050505;
         }
 
         .data td:last-child {
-            color: #333;
+            color: #050505;
+        }
+
+        .bagian {
+            margin-top: 28px;
         }
 
         .ipk {
-            color: #4a6cf7;
-
             font-weight: bold;
-
-            font-size: 18px;
+            color: #315f85;
         }
 
         .kategori {
             display: inline-block;
-
-            margin-top: 5px;
-
-            padding: 5px 10px;
-
-            border-radius: 15px;
-
-            background: #eaf2ff;
-
-            color: #2455b5;
-
-            font-size: 12px;
-
-            font-weight: bold;
+            margin-left: 8px;
+            padding: 3px 7px;
+            background-color: #e8f0f6;
+            color: #315f85;
+            font-size: 11px;
         }
 
-        .hasil {
+        .status {
             margin-top: 20px;
-
-            padding: 18px;
-
-            background: #f5f7ff;
-
-            border-radius: 10px;
-
-            text-align: center;
+            padding: 15px;
+            border: 1px solid #fff;
+            background-color: #444da1;
         }
 
-        .hasil p {
-            margin: 5px;
-
-            color: #666;
+        .status p {
+            margin: 0 0 6px;
+            font-size: 13px;
+            color: #fff;
         }
 
-        .hasil strong {
-            color: #4a6cf7;
-
-            font-size: 19px;
+        .status strong {
+            font-size: 17px;
+            color: #fff;
         }
 
         .footer {
+            padding: 12px;
             text-align: center;
-
-            padding: 15px;
-
-            background: #f7f7f7;
-
-            color: #888;
-
+            background-color: #444da1;
+            color: #ffff;
             font-size: 12px;
+            border-top: 1px solid #ccc;
+        }
+
+        @media (max-width: 600px) {
+
+            body {
+                padding: 15px;
+            }
+
+            .container {
+                max-width: 100%;
+            }
+
+            .content {
+                padding: 18px;
+            }
+
+            .data td {
+                padding: 10px 5px;
+            }
+
         }
 
     </style>
@@ -223,157 +202,183 @@ $mahasiswa = [
 
 <div class="container">
 
-
-    <!-- HEADER -->
-
     <div class="header">
 
-        <h1>
-            Biodata Mahasiswa
-        </h1>
+        <h1>Biodata Mahasiswa</h1>
 
-        <p>
-            Sistem Informasi Data Mahasiswa
-        </p>
+        <p>Data informasi mahasiswa</p>
 
     </div>
 
 
     <div class="content">
 
-
-        <!-- DATA MAHASISWA -->
+        <h3>Data Akademik</h3>
 
         <table class="data">
 
             <tr>
                 <td>NIM</td>
-
                 <td>
-                    <?= htmlspecialchars(
-                        $mahasiswa['nim']
-                    ) ?>
+                    <?= htmlspecialchars($mahasiswa['nim']) ?>
                 </td>
             </tr>
-
 
             <tr>
                 <td>Nama</td>
-
                 <td>
-                    <?= htmlspecialchars(
-                        $mahasiswa['nama']
-                    ) ?>
+                    <?= htmlspecialchars($mahasiswa['nama']) ?>
                 </td>
             </tr>
-
 
             <tr>
                 <td>Program Studi</td>
-
                 <td>
-                    <?= htmlspecialchars(
-                        $mahasiswa['prodi']
-                    ) ?>
+                    <?= htmlspecialchars($mahasiswa['prodi']) ?>
                 </td>
             </tr>
-
 
             <tr>
                 <td>Semester</td>
-
                 <td>
                     <?= htmlspecialchars(
-                        (string)$mahasiswa['semester']
+                        (string) $mahasiswa['semester']
                     ) ?>
                 </td>
             </tr>
-
 
             <tr>
-                <td>Tanggal Lahir</td>
-
+                <td>Tahun Masuk</td>
                 <td>
                     <?= htmlspecialchars(
-                        $mahasiswa['tanggal_lahir']
+                        (string) $mahasiswa['tahun_masuk']
                     ) ?>
                 </td>
             </tr>
-
 
             <tr>
-                <td>Jenis Kelamin</td>
-
+                <td>Status</td>
                 <td>
-                    <?= htmlspecialchars(
-                        $mahasiswa['jenis_kelamin']
-                    ) ?>
+                    <?= htmlspecialchars($mahasiswa['status']) ?>
                 </td>
             </tr>
-
 
             <tr>
                 <td>IPK</td>
-
                 <td>
 
                     <span class="ipk">
                         <?= htmlspecialchars(
-                            (string)$mahasiswa['ipk']
+                            (string) $mahasiswa['ipk']
                         ) ?>
                     </span>
 
-                    <br>
-
                     <span class="kategori">
-
                         <?= htmlspecialchars(
-                            kategoriIPK(
-                                $mahasiswa['ipk']
-                            )
+                            kategoriIPK($mahasiswa['ipk'])
                         ) ?>
-
                     </span>
 
                 </td>
-
             </tr>
 
         </table>
 
 
-        <!-- HASIL STATUS -->
+        <div class="bagian">
 
-        <div class="hasil">
+            <h3>Data Pribadi</h3>
 
-            <p>
-                Predikat Kelulusan
-            </p>
+            <table class="data">
 
-            <strong>
+                <tr>
+                    <td>Tanggal Lahir</td>
+                    <td>
+                        <?= htmlspecialchars(
+                            $mahasiswa['tanggal_lahir']
+                        ) ?>
+                    </td>
+                </tr>
 
-                <?= htmlspecialchars(
-                    statusKelulusan(
-                        $mahasiswa['ipk']
-                    )
-                ) ?>
+                <tr>
+                    <td>Jenis Kelamin</td>
+                    <td>
+                        <?= htmlspecialchars(
+                            $mahasiswa['jenis_kelamin']
+                        ) ?>
+                    </td>
+                </tr>
 
-            </strong>
+                <tr>
+                    <td>Agama</td>
+                    <td>
+                        <?= htmlspecialchars(
+                            $mahasiswa['agama']
+                        ) ?>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>Alamat</td>
+                    <td>
+                        <?= htmlspecialchars(
+                            $mahasiswa['alamat']
+                        ) ?>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>Email</td>
+                    <td>
+                        <?= htmlspecialchars(
+                            $mahasiswa['email']
+                        ) ?>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>No. HP</td>
+                    <td>
+                        <?= htmlspecialchars(
+                            $mahasiswa['no_hp']
+                        ) ?>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>Hobi</td>
+                    <td>
+                        <?= htmlspecialchars(
+                            $mahasiswa['hobi']
+                        ) ?>
+                    </td>
+                </tr>
+
+            </table>
 
         </div>
 
 
+        <div class="status">
+
+            <p>Predikat Kelulusan Berdasarkan IPK</p>
+
+            <strong>
+                <?= htmlspecialchars(
+                    statusKelulusan($mahasiswa['ipk'])
+                ) ?>
+            </strong>
+
+        </div>
+
     </div>
 
-
-    <!-- FOOTER -->
 
     <div class="footer">
 
         Biodata Mahasiswa © 2026
 
     </div>
-
 
 </div>
 

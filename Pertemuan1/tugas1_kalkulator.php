@@ -1,48 +1,71 @@
 <?php
-// kalkulator.php
 
 $hasil = null;
 $pesan = '';
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+$a = $_POST['a'] ?? '';
+$b = $_POST['b'] ?? '';
+$operator = $_POST['operator'] ?? '+';
 
-    $a = (float) ($_POST['a'] ?? 0);
-    $b = (float) ($_POST['b'] ?? 0);
-    $operator = $_POST['operator'] ?? '+';
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
-    switch ($operator) {
+    if ($a == '' || $b == '') {
+        $pesan = "Silakan isi kedua angka.";
+    } else {
 
-        case '+':
-            $hasil = $a + $b;
-            break;
+        $a = (float) $a;
+        $b = (float) $b;
 
-        case '-':
-            $hasil = $a - $b;
-            break;
+        switch ($operator) {
 
-        case '*':
-            $hasil = $a * $b;
-            break;
+            case '+':
+                $hasil = $a + $b;
+                break;
 
-        case '/':
-            if ($b == 0) {
-                $pesan = 'Pembagian dengan nol tidak diperbolehkan.';
-            } else {
-                $hasil = $a / $b;
-            }
-            break;
+            case '-':
+                $hasil = $a - $b;
+                break;
 
-        default:
-            $pesan = 'Operator tidak valid.';
+            case '*':
+                $hasil = $a * $b;
+                break;
+
+            case '/':
+                if ($b == 0) {
+                    $pesan = "Tidak bisa membagi dengan 0.";
+                } else {
+                    $hasil = $a / $b;
+                }
+                break;
+
+            case '^':
+                $hasil = $a ** $b;
+                break;
+
+            case '%':
+                if ($b == 0) {
+                    $pesan = "Sisa bagi dengan 0 tidak bisa.";
+                } else {
+                    $hasil = $a % $b;
+                }
+                break;
+
+            default:
+                $pesan = "Operator tidak tersedia.";
+        }
     }
 }
+
 ?>
 
 <!DOCTYPE html>
 <html lang="id">
 
 <head>
+
     <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Kalkulator</title>
 
@@ -50,137 +73,194 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         body {
             font-family: Arial, sans-serif;
-            background: #f2f4f8;
+            background: #ffff;
             margin: 0;
-            padding: 40px;
+            padding: 30px;
         }
 
         .kalkulator {
-            width: 400px;
+            width: 350px;
+            max-width: 100%;
             margin: auto;
-            background: white;
-            padding: 30px;
+
+            /* Kotak kalkulator warna hitam */
+            background: #111;
+
+            padding: 25px;
             border-radius: 15px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+
+            box-shadow: 0 5px 15px #222;
         }
 
-        h1 {
+        h2 {
             text-align: center;
-            color: #333;
-            margin-bottom: 25px;
+
+            /* Judul putih */
+            color: white;
         }
 
         label {
             display: block;
-            margin-bottom: 7px;
-            color: #444;
-            font-weight: bold;
+            margin-bottom: 5px;
+
+            /* Label putih */
+            color: white;
         }
 
         input,
         select {
             width: 100%;
-            padding: 12px;
-            margin-bottom: 18px;
-            border: 1px solid #ccc;
+            padding: 10px;
+            margin-bottom: 15px;
+
+            border: 2px solid #3498db;
             border-radius: 8px;
-            font-size: 15px;
+
             box-sizing: border-box;
+
+            background: #222;
+            color: white;
+        }
+
+        input::placeholder {
+            color: #aaa;
         }
 
         input:focus,
         select:focus {
-            border-color: #4a6cf7;
+            border-color: #74b9ff;
             outline: none;
         }
 
         button {
             width: 100%;
-            padding: 12px;
-            background: #4a6cf7;
-            color: white;
+            padding: 11px;
+
             border: none;
             border-radius: 8px;
-            font-size: 16px;
+
+            background: #3498db;
+            color: white;
+
+            font-size: 15px;
             cursor: pointer;
         }
 
         button:hover {
-            background: #3451c7;
+            background: #2980b9;
+        }
+
+        .reset {
+            display: block;
+            text-align: center;
+
+            margin-top: 10px;
+            padding: 10px;
+
+            background: #555;
+            color: white;
+
+            text-decoration: none;
+            border-radius: 8px;
+        }
+
+        .reset:hover {
+            background: #777;
         }
 
         .hasil {
             margin-top: 20px;
             padding: 15px;
-            background: #eaf2ff;
-            border-radius: 8px;
+
             text-align: center;
-            color: #2455b5;
-            font-size: 18px;
-            font-weight: bold;
+
+            background: #27ae60;
+            border-radius: 10px;
+
+            color: white;
         }
 
         .pesan {
             margin-top: 20px;
             padding: 15px;
-            background: #ffe8e8;
-            color: #c62828;
-            border-radius: 8px;
+
             text-align: center;
+
+            background: #e74c3c;
+            color: white;
+
+            border-radius: 10px;
         }
 
     </style>
+
 </head>
 
 <body>
 
 <div class="kalkulator">
 
-    <h1>Kalkulator Sederhana</h1>
+    <h2>🧮 Kalkulator</h2>
 
     <form method="post">
 
-        <label for="a">
-            Angka Pertama
-        </label>
+        <label>Angka pertama</label>
 
         <input
             type="number"
             step="any"
             name="a"
-            id="a"
-            placeholder="Masukkan angka pertama"
+            value="<?= htmlspecialchars($a) ?>"
+            placeholder="Contoh: 10"
             required
         >
 
+        <label>Operasi</label>
 
-        <label for="operator">
-            Operator
-        </label>
+        <select name="operator">
 
-        <select name="operator" id="operator" required>
+            <option value="+"
+                <?= $operator == '+' ? 'selected' : '' ?>>
+                ➕ Tambah
+            </option>
 
-            <option value="+">Penjumlahan (+)</option>
-            <option value="-">Pengurangan (-)</option>
-            <option value="*">Perkalian (*)</option>
-            <option value="/">Pembagian (/)</option>
+            <option value="-"
+                <?= $operator == '-' ? 'selected' : '' ?>>
+                ➖ Kurang
+            </option>
+
+            <option value="*"
+                <?= $operator == '*' ? 'selected' : '' ?>>
+                ✖️ Kali
+            </option>
+
+            <option value="/"
+                <?= $operator == '/' ? 'selected' : '' ?>>
+                ➗ Bagi
+            </option>
+
+            <option value="^"
+                <?= $operator == '^' ? 'selected' : '' ?>>
+                🔺 Pangkat
+            </option>
+
+            <option value="%"
+                <?= $operator == '%' ? 'selected' : '' ?>>
+                🔢 Sisa Bagi
+            </option>
 
         </select>
 
-
-        <label for="b">
-            Angka Kedua
-        </label>
+        <label>Angka kedua</label>
 
         <input
             type="number"
             step="any"
             name="b"
-            id="b"
-            placeholder="Masukkan angka kedua"
+            value="<?= htmlspecialchars($b) ?>"
+            placeholder="Contoh: 5"
             required
         >
-
 
         <button type="submit">
             Hitung
@@ -188,8 +268,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     </form>
 
+    <a href="kalkulator.php" class="reset">
+        🔄 Reset
+    </a>
 
-    <?php if ($pesan): ?>
+    <?php if ($pesan != ''): ?>
 
         <div class="pesan">
             <?= htmlspecialchars($pesan) ?>
@@ -198,8 +281,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <?php elseif ($hasil !== null): ?>
 
         <div class="hasil">
-            Hasil:
-            <?= htmlspecialchars((string)$hasil) ?>
+            <b>Hasil:</b><br>
+            <strong><?= htmlspecialchars($hasil) ?></strong>
         </div>
 
     <?php endif; ?>
