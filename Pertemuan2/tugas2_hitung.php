@@ -5,8 +5,6 @@ interface BisaDihitung
     public function hargaAkhir(): float;
 }
 
-
-// CLASS PRODUK
 class Produk implements BisaDihitung
 {
     protected string $nama;
@@ -46,8 +44,6 @@ class Produk implements BisaDihitung
     }
 }
 
-
-// CLASS PRODUK DISKON
 class ProdukDiskon extends Produk
 {
     private float $diskon;
@@ -64,7 +60,6 @@ class ProdukDiskon extends Produk
             $kategori
         );
 
-        // Modifikasi 2: validasi diskon
         if ($diskon < 0 || $diskon > 100) {
             throw new InvalidArgumentException(
                 'Diskon harus antara 0 sampai 100%'
@@ -74,7 +69,6 @@ class ProdukDiskon extends Produk
         $this->diskon = $diskon;
     }
 
-    // Override hargaAkhir()
     public function hargaAkhir(): float
     {
         return $this->harga *
@@ -87,8 +81,6 @@ class ProdukDiskon extends Produk
     }
 }
 
-
-// DATA PRODUK
 try {
 
     $daftarProduk = [
@@ -162,9 +154,6 @@ body {
     padding: 20px;
 }
 
-
-/* HEADER */
-
 .header {
     background: #111827;
     color: white;
@@ -187,9 +176,6 @@ body {
     color: #cbd5e1;
 }
 
-
-/* TOTAL PRODUK */
-
 .info {
     background: white;
 
@@ -206,9 +192,6 @@ body {
 .info strong {
     color: #2563eb;
 }
-
-
-/* PRODUK */
 
 .produk {
     background: white;
@@ -234,9 +217,6 @@ body {
 .produk:hover {
     transform: translateY(-3px);
 }
-
-
-/* KIRI */
 
 .kiri {
     display: flex;
@@ -277,9 +257,6 @@ body {
     font-size: 13px;
 }
 
-
-/* KANAN */
-
 .kanan {
     text-align: right;
 }
@@ -318,9 +295,6 @@ body {
     margin-bottom: 4px;
 }
 
-
-/* FOOTER */
-
 .footer {
     text-align: center;
 
@@ -330,9 +304,6 @@ body {
 
     margin-top: 25px;
 }
-
-
-/* RESPONSIVE */
 
 @media(max-width:600px) {
 
