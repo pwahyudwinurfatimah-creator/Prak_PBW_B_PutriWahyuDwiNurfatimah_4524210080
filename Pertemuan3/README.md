@@ -11,7 +11,7 @@ Database akademik dibuat menggunakan perintah CREATE DATABASE IF NOT EXISTS akad
 
 *Screenshot Membuat Database Akademik:*
 
-![Membuat Dataabase Akademik](asset/MembuatDatabaseAkademik.png)
+![Membuat Dataabase Akademik](Asset/MembuatDatabaseAkademik.png)
 
 
 
@@ -24,7 +24,7 @@ Database akademik kemudian dipilih menggunakan perintah USE akademik;. Perintah 
 
 *Screenshot Menampilkan Database Akademik:*
 
-![Menampilkan Database Akademik](asset/MenampilkanDatabaseAkademik.png)
+![Menampilkan Database Akademik](Asset/MenampilkanDatabaseAkademik.png)
 
 
 
@@ -37,7 +37,7 @@ Tabel mahasiswa dibuat untuk menyimpan data mahasiswa. Beberapa kolom yang digun
 
 *Screenshot Membuat Tabel Mahasiswa:*
 
-![Membuat Tabel Mahasiswa](asset/MembuatTabelMahasiswa.png)
+![Membuat Tabel Mahasiswa](Asset/MembuatTabelMahasiswa.png)
 
 
 
@@ -50,7 +50,7 @@ Tabel dosen digunakan untuk menyimpan data dosen. Tabel ini memiliki kolom nidn,
 
 *Screenshot Membuat Tabel Dosen:*
 
-![Membuat Tabel Dosen](asset/MembuatTabelDosen.png)
+![Membuat Tabel Dosen](Asset/MembuatTabelDosen.png)
 
 
 
