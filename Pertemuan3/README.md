@@ -1,44 +1,58 @@
 **Tugas 03 - Prak. Pemrograman Berbasis Web - B**
 
 
-Pada tugas Pertemuan 03, saya melakukan praktik membuat database akademik menggunakan phpMyAdmin. Pada praktik ini saya membuat database bernama akademik, kemudian membuat beberapa tabel yang saling berhubungan, yaitu tabel mahasiswa, dosen, mata_kuliah, dan krs. Selain membuat tabel, saya juga melakukan pengecekan menggunakan perintah SQL untuk memastikan tabel yang dibuat sudah berhasil.
+Pada tugas Pertemuan 03 dilakukan praktik pembuatan database menggunakan phpMyAdmin. Database yang dibuat bernama akademik dan digunakan untuk menyimpan data yang berhubungan dengan kegiatan akademik. Setelah database berhasil dibuat, beberapa tabel dibuat di dalamnya, yaitu tabel mahasiswa, dosen, mata_kuliah, dan krs. Setiap tabel memiliki fungsi masing-masing dan beberapa tabel dibuat saling berhubungan menggunakan primary key dan foreign key.
 
 
-**Membuat Database Akademik & Menampilkan Database Akademik**
+**Membuat Database Akademik**
 
 
-Pada gambar pertama terlihat proses pembuatan database dengan nama akademik menggunakan perintah CREATE DATABASE IF NOT EXISTS akademik;. Setelah perintah dijalankan, database berhasil dibuat dan muncul pada bagian sebelah kiri phpMyAdmin. Database ini nantinya digunakan untuk menyimpan seluruh tabel yang berhubungan dengan data akademik.
+Database akademik dibuat menggunakan perintah CREATE DATABASE IF NOT EXISTS akademik;. Perintah tersebut digunakan untuk membuat database baru dan memastikan database dengan nama yang sama tidak dibuat kembali jika sudah tersedia. Setelah perintah berhasil dijalankan, database akademik muncul pada bagian daftar database di sebelah kiri phpMyAdmin. Database ini menjadi tempat untuk menyimpan tabel-tabel yang digunakan dalam tugas.
 
 *Screenshot Membuat Database Akademik:*
 
 ![Membuat Dataabase Akademik](asset/MembuatDatabaseAkademik.png)
 
+
+
+
+
+**Menampilkan Database Akademik**
+
+
+Database akademik kemudian dipilih menggunakan perintah USE akademik;. Perintah ini digunakan agar proses pembuatan tabel selanjutnya dilakukan di dalam database akademik. Setelah database dipilih, pada bagian atas phpMyAdmin terlihat keterangan bahwa database yang sedang digunakan adalah akademik.
+
 *Screenshot Menampilkan Database Akademik:*
 
-![Menampilkan Database Akademik](asset/Menampilkan%20Database%20Akademik.png)
+![Menampilkan Database Akademik](asset/MenampilkanDatabaseAkademik.png)
 
 
 
 
 
-**Hitung**
+**Membuat Tabel Mahasiswa**
 
 
-Program Hitung Produk menggunakan konsep OOP PHP dengan interface BisaDihitung, class Produk, dan class turunan ProdukDiskon. Program digunakan untuk menghitung harga akhir produk, termasuk produk yang mendapatkan diskon. Class ProdukDiskon melakukan perhitungan harga berdasarkan persentase diskon yang diberikan.
+Tabel mahasiswa dibuat untuk menyimpan data mahasiswa. Beberapa kolom yang digunakan yaitu nim, nama, email, prodi, angkatan, dan ipk. Kolom nim digunakan sebagai primary key sehingga setiap mahasiswa mempunyai identitas yang berbeda. Kolom email dibuat UNIQUE agar tidak ada email yang sama. Pada kolom ipk juga diberikan aturan agar nilai yang dimasukkan berada pada rentang 0 sampai 4.
 
-Pada modifikasi program, ditambahkan field kategori produk serta validasi diskon agar nilai diskon hanya berada pada rentang 0 sampai 100 persen. Selain itu, ditambahkan beberapa data produk dan tampilan menggunakan CSS sehingga informasi produk, kategori, harga normal, dan harga setelah diskon dapat ditampilkan dengan lebih rapi.
+*Screenshot Membuat Tabel Mahasiswa:*
 
-*Screenshot Hitung Sebelum Modifikasi:*
-
-![Hitung-Sebelum.php](asset/hitung-sebelum.png)
-
-
-*Screenshot Hitung Sesudah Modifikasi:*
-
-![Hitung-Sesudah.php](asset/hitung-sesudah.png)
+![Membuat Tabel Mahasiswa](asset/MembuatTabelMahasiswa.png)
 
 
 
-**Error yang Pernah Muncul**
 
-Salah satu error yang dapat terjadi pada program Hitung Produk adalah ketika nilai diskon yang dimasukkan kurang dari 0 atau lebih dari 100. Untuk mengatasinya, ditambahkan validasi pada constructor ProdukDiskon sehingga program akan memberikan pesan bahwa diskon harus berada di antara 0 sampai 100 persen.
+
+**Membuat Tabel Dosen**
+
+
+Tabel dosen digunakan untuk menyimpan data dosen. Tabel ini memiliki kolom nidn, nama, dan email. Kolom nidn digunakan sebagai primary key, sedangkan kolom email diberikan aturan UNIQUE. Data dosen yang tersimpan pada tabel ini nantinya dapat digunakan untuk membuat hubungan dengan tabel mata kuliah.
+
+*Screenshot Membuat Tabel Dosen:*
+
+![Membuat Tabel Dosen](asset/MembuatTabelDosen.png)
+
+
+
+
+
