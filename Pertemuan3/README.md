@@ -11,7 +11,7 @@ Pada gambar pertama terlihat proses pembuatan database dengan nama akademik meng
 
 *Screenshot Membuat Database Akademik:*
 
-![Membuat Dataabase Akademik](asset/Membuat%20Database%20Akademik.png)
+![Membuat Dataabase Akademik](asset/MembuatDatabaseAkademik.png)
 
 *Screenshot Menampilkan Database Akademik:*
 
