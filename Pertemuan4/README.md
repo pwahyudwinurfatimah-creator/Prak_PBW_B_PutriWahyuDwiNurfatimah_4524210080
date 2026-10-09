@@ -13,7 +13,7 @@ Pada langkah pertama, database akademik dipilih menggunakan perintah USE akademi
 
 *Screenshot Memilih Database Akademik:*
 
-![Memilih Database Akademik](asset/MembuatTabelMata_Kuliah.png)
+![Memilih Database Akademik](asset/MenampilkanDatabaseAkademik_2.png)
 
 
 
