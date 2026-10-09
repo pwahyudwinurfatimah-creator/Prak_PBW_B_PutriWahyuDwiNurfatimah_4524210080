@@ -14,7 +14,7 @@ Database akademik dibuat menggunakan perintah CREATE DATABASE IF NOT EXISTS akad
 
 *Screenshot Membuat Database Akademik:*
 
-![Membuat Dataabase Akademik](Asset/MembuatDatabaseAkademik.png)
+![Membuat Dataabase Akademik](asset/MembuatDatabaseAkademik.png)
 
 
 
@@ -27,7 +27,7 @@ Database akademik kemudian dipilih menggunakan perintah USE akademik;. Perintah 
 
 *Screenshot Menampilkan Database Akademik:*
 
-![Menampilkan Database Akademik](Asset/MenampilkanDatabaseAkademik.png)
+![Menampilkan Database Akademik](asset/MenampilkanDatabaseAkademik.png)
 
 
 
@@ -40,7 +40,7 @@ Tabel mahasiswa dibuat untuk menyimpan data mahasiswa. Beberapa kolom yang digun
 
 *Screenshot Membuat Tabel Mahasiswa:*
 
-![Membuat Tabel Mahasiswa](Asset/MembuatTabelMahasiswa.png)
+![Membuat Tabel Mahasiswa](asset/MembuatTabelMahasiswa.png)
 
 
 
@@ -53,7 +53,7 @@ Tabel dosen digunakan untuk menyimpan data dosen. Tabel ini memiliki kolom nidn,
 
 *Screenshot Membuat Tabel Dosen:*
 
-![Membuat Tabel Dosen](Asset/MembuatTabelDosen.png)
+![Membuat Tabel Dosen](asset/MembuatTabelDosen.png)
 
 
 
@@ -66,7 +66,7 @@ Tabel mata_kuliah digunakan untuk menyimpan informasi mengenai mata kuliah. Kolo
 
 *Screenshot Membuat Tabel Mata Kuliah:*
 
-![Membuat Tabel Mata Kuliah](Asset/MembuatTabelMata_Kuliah.png)
+![Membuat Tabel Mata Kuliah](asset/MembuatTabelMata_Kuliah.png)
 
 
 
@@ -79,7 +79,7 @@ Tabel krs digunakan untuk menyimpan data Kartu Rencana Studi. Tabel ini memiliki
 
 *Screenshot Membuat Tabel KRS:*
 
-![Membuat Tabel KRS](Asset/MembuatTabelKRS.png)
+![Membuat Tabel KRS](asset/MembuatTabelKRS.png)
 
 
 
@@ -92,7 +92,7 @@ Perintah SELECT * FROM dosen; digunakan untuk menampilkan seluruh isi tabel dose
 
 *Screenshot Menampilkan Data Tabel Dosen:*
 
-![Menampilkan Data Tabel Dosen](Asset/MenampilkanDataTabelDosen.png)
+![Menampilkan Data Tabel Dosen](asset/MembuatTabelDosen.png)
 
 
 
@@ -105,7 +105,7 @@ Perintah SELECT * FROM krs; digunakan untuk melihat seluruh data yang terdapat p
 
 *Screenshot Menampilkan Data Tabel KRS:*
 
-![Menampilkan Data Tabel KRS](Asset/MenampilkanDataTabelKRS.png)
+![Menampilkan Data Tabel KRS](asset/MenampilkanDataTabelKRS.png)
 
 
 
@@ -118,7 +118,7 @@ Perintah SELECT * FROM mahasiswa; digunakan untuk menampilkan seluruh isi tabel 
 
 *Screenshot Menampilkan Data Tabel Mahasiswa:*
 
-![Menampilkan Data Tabel Mahasiswa](Asset/MenampilkanDataTabelMata_Kuliah.png)
+![Menampilkan Data Tabel Mahasiswa](asset/MenampilkanDataTabelMahasiswa.png)
 
 
 
@@ -131,7 +131,7 @@ Perintah SELECT * FROM mata_kuliah; digunakan untuk menampilkan seluruh isi tabe
 
 *Screenshot Menampilkan Data Tabel Mata Kuliah:*
 
-![Menampilkan Data Tabel Mata Kuliah](Asset/MenampilkanDataTabelMahasiswa.png)
+![Menampilkan Data Tabel Mata Kuliah](asset/MenampilkanDataTabelMata_Kuliah.png)
 
 
 
