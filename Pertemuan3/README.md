@@ -27,7 +27,7 @@ Database akademik kemudian dipilih menggunakan perintah USE akademik;. Perintah 
 
 *Screenshot Menampilkan Database Akademik:*
 
-![Menampilkan Database Akademik](Asset/MenampilkanDatabaseAkademik.png)
+![Menampilkan Database Akademik](Asset/MenampilkanDatabaseAkademik_1.png)
 
 
 
